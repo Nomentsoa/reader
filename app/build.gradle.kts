@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
+    id("com.google.gms.google-services")
+
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
 }
@@ -47,6 +49,12 @@ android {
 dependencies {
     val hilt_version = "2.57.1"
     val room_version = "2.8.4"
+
+    implementation(platform(libs.firebase.bom))
+
+    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.4")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

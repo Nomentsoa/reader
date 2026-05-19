@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "847232761601",
+    "project_id": "lazareader",
+    "storage_bucket": "lazareader.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847232761601:android:95d59a990d9e7b0e8ee500",
+        "android_client_info": {
+          "package_name": "ca.lazanomentsoarabesandratana.reader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsVzlWzbjR7b3wr8y_cmP4eV3xuhIlc4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
