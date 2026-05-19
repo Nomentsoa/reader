@@ -47,12 +47,14 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.auth)
+
     val hilt_version = "2.57.1"
     val room_version = "2.8.4"
 
     implementation(platform(libs.firebase.bom))
 
-    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
+//    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.4")
 
 

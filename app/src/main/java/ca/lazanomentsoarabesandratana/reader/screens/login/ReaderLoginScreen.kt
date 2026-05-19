@@ -52,15 +52,17 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import ca.lazanomentsoarabesandratana.reader.R
 import ca.lazanomentsoarabesandratana.reader.components.EmailInput
 import ca.lazanomentsoarabesandratana.reader.components.PasswordInput
 import ca.lazanomentsoarabesandratana.reader.components.ReaderLogo
+import ca.lazanomentsoarabesandratana.reader.navigation.ReaderScreens
 import org.w3c.dom.Text
 
 @Composable
-fun ReaderLoginScreen(navController: NavController) {
+fun ReaderLoginScreen(navController: NavController, viewModel: LoginScreenViewModel = viewModel()) {
 
     val showLoginForm = rememberSaveable {
         mutableStateOf(true)
@@ -76,12 +78,16 @@ fun ReaderLoginScreen(navController: NavController) {
             ReaderLogo()
             if (showLoginForm.value) {
                 UserForm(loading = false, isCreateAccount = false) { email, password ->
-                    //Todo: create FB login
+                    viewModel.signInWithEmailAndPassword(email, password){
+                        navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                    }
                     Log.d("Test login", "email: $email  password:$password")
                 }
             } else {
                 UserForm(loading = false, isCreateAccount = true) { email, password ->
-                    //Todo: create FB account
+                    viewModel.createUserWithEmailAndPassword(email, password){
+                        navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                    }
                 }
             }
 

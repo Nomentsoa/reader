@@ -19,7 +19,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ca.lazanomentsoarabesandratana.reader.navigation.ReaderNavigation
 import ca.lazanomentsoarabesandratana.reader.ui.theme.ReaderTheme
-import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
